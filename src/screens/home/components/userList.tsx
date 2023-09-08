@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { UserListContext } from "../../../context/userList.context";
 import {
-  UserListProps,
   UserItemProps,
 } from "../../../types/screens.types/home.type";
 

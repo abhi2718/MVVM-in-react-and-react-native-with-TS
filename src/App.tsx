@@ -1,13 +1,12 @@
-import React from "react";
-import { UserListProvider } from "./context/userList.context";
+import CombinedProviders from "./context";
 import HomeScreen from "./screens/home/home";
 
 function App() {
   return (
     <div>
-      <UserListProvider>
+      <CombinedProviders>
       <HomeScreen />
-      </UserListProvider>
+      </CombinedProviders>
     </div>
   );
 }

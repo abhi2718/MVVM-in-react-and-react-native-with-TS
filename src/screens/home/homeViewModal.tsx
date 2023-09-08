@@ -1,7 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { UserListContext } from "../../context/userList.context";
 import { HomeRepository } from "../../respository/home";
-import { User } from "../../types/screens.types/home.type";
 
 export default function useViewModal() {
   const homeRepository = new HomeRepository();

@@ -1,22 +1,17 @@
-import { createContext, ReactNode, useState } from "react";
+import { createContext,useState } from "react";
+import { userListContextType, userListProviderProps } from "../../types/context.type/userList.type";
 import { User } from "../../types/screens.types/home.type";
 
-export type userListContextType = {
-  userList: User[];
-  setUserList: React.Dispatch<React.SetStateAction<User[]>>;
-  loading: boolean;
-  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
-};
+
 export const UserListContext = createContext<userListContextType>({
   userList: [],
   setUserList: () => {},
   loading: false,
   setLoading: () => {},
 });
-type userListProviderProps = {
-    children:ReactNode 
-}
+
 export const UserListProvider = (props: userListProviderProps) => {
+  const { children } = props;
   const [userList, setUserList] = useState<User[]>([]);
   const [loading, setLoading] = useState(false);
   const value = {
@@ -27,7 +22,7 @@ export const UserListProvider = (props: userListProviderProps) => {
   };
   return (
     <UserListContext.Provider value={value}>
-      {props.children}
+      {children}
     </UserListContext.Provider>
   );
 };
