@@ -2,17 +2,16 @@ import React from "react";
 import useViewModal from "./homeViewModal";
 import "./home.css";
 import Loader from "../../components/tools";
+import UserList from "./components/userList";
 
 export default function HomeScreen() {
-    const { count, countUp, countDown, loading } = useViewModal();
+    const {loading} = useViewModal();
     if (loading) {
         return <Loader />
     }
   return (
     <div>
-      <p>{count}</p>
-      <button onClick={countUp}>Count UP</button>
-      <button onClick={countDown}>Count Down</button>
+      <UserList />
     </div>
   );
 }

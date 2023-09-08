@@ -1,11 +1,13 @@
+import { AppUrl } from '../../utils/appUrl';
 import { ApiService } from './../../data/network/apiService';
 
 
 export class HomeRepository{
     apiService = new ApiService();
 
-    async getUsers() {
-        const url = "https://reqres.in/api/users?page=2";
+    async getUsers(pageNumber:number) {
+        const url = `${AppUrl.userEndPoint}?page=${pageNumber}`;
+        console.log(url)
         return this.apiService.getGetApiResponse(url);
     }
 
